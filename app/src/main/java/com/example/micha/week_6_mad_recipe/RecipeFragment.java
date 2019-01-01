@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
+
 
 
 public class RecipeFragment extends Fragment {
@@ -16,7 +16,7 @@ public class RecipeFragment extends Fragment {
     private static final String ARG_ID = "id";
     private Recipe recipe;
 
-    public static RecipeFragment newInstance(Recipe recipe) {
+    public static android.support.v4.app.Fragment newInstance(Recipe recipe) {
         RecipeFragment fragment = new RecipeFragment();
         Bundle args = new Bundle();
 
@@ -35,14 +35,14 @@ public class RecipeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.recipe, container, false);
+        View view = inflater.inflate(R.layout.content_main, container, false);
 
         TextView textView = view.findViewById(R.id.title);
         ImageView imageView = view.findViewById(R.id.image);
         textView.setText(recipe.getTitle());
 
         Glide.with(this)
-                .load(recipe.getImageUrl())
+                .load(recipe.getImage())
                 .into(imageView);
 
         return view;

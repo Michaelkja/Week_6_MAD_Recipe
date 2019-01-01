@@ -11,29 +11,31 @@ import static java.lang.System.in;
 public class Recipe implements Parcelable {
 
 
-    @SerializedName("image_url")
-    @Expose
-    private String imageUrl;
     @SerializedName("title")
     @Expose
     private String title;
 
-    public Recipe (int id , String title , String imageUrl) {
-        this.imageUrl = imageUrl;
+    @SerializedName("image_url")
+    @Expose
+    private String image;
+
+    public Recipe(String title, String image) {
+        super();
         this.title = title;
+        this.image = image;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage() {
+        return image;
     }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
 
     public String getTitle() {
         return title;
-    }
-
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public void setTitle(String title) {
@@ -46,14 +48,14 @@ public class Recipe implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel parcel, int flags) {
-        parcel.writeString(this.title);
-        parcel.writeString(this.imageUrl);
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.title);
+        dest.writeString(this.image);
     }
 
     public Recipe(Parcel in) {
         this.title = in.readString();
-        this.imageUrl = in.readString();
+        this.image = in.readString();
     }
 
     public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {

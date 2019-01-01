@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
+
 public class RecipeAdapter  extends FragmentPagerAdapter  {
 
     private ArrayList<Recipe> recipes = new ArrayList<>();

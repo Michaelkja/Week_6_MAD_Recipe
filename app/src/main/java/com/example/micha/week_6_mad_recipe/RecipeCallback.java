@@ -7,10 +7,6 @@ import java.util.ArrayList;
 
 public class RecipeCallback {
 
-    @SerializedName("count")
-    @Expose
     int count;
-    @SerializedName("recipes")
-    @Expose
-    ArrayList<Recipe> recipes;
+    Recipe[] recipes;
 }
