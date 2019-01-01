@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 
 public class RecipeCallback {
+
     @SerializedName("count")
     @Expose
     int count;
